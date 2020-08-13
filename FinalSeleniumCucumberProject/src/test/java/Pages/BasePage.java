@@ -104,6 +104,11 @@ public class BasePage {
 
     public void mouseHoverOverElementAndClick (By targetToHover, By targetToClick) {
         WebElement element = findElementUsingFluentWait(targetToHover);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         WebElement clickOnElement = findElementUsingFluentWait(targetToClick);
         Actions actions = new Actions(Web.getDriver());
         actions.moveToElement(element).moveToElement(clickOnElement).click().build().perform();
