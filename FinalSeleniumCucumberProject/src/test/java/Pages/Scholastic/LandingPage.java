@@ -16,6 +16,7 @@ public class LandingPage extends BasePage {
     public void clickSignin() {
         clickThis(signinLocator);
         type(usernameLocator, "mmm@yahoo.com");
+        sleep(3000);
         type(passwordLocator, "Career2020");
         clickThis(signinButtonLocator);
         try {

@@ -222,9 +222,28 @@ public class BasePage {
         }
     }
 
+    public void sleep(int sec) {
+        try {
+            Thread.sleep(sec);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
+
+    public void dropDownByClick(By dropDown, By locator, String text) {
+        clickThis(dropDown);
+        sleep(2000);
+        List<WebElement> allElements = findElementsUsingFluentWait(locator);
+        for(WebElement element: allElements) {
+            if(element.getText().equalsIgnoreCase(text)) {
+                clickThis(element);
+                break;
+            }
+        }
+    }
 
 
 }

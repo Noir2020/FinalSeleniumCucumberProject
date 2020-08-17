@@ -41,7 +41,7 @@ public class UpdateMyNameSD {
         Assert.assertTrue(myAccountsPage.getTextAccountName(name));
     }
 
-    @Then("^I verify name is upddated successfully in Page Header$")
+    @Then("^I verify name is updated successfully in Page Header$")
     public void verifyNameInHeader() {
         Assert.assertTrue(myAccountsPage.getTextHeaderName(name));
     }
